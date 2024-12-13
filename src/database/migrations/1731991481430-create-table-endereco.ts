@@ -15,10 +15,12 @@ export class CreateTableEndereco1731991481430 implements MigrationInterface {
             cep VARCHAR NOT NULL,
             referencia VARCHAR NULL,
             zona VARCHAR NOT NULL,
-            latitude DOUBLE PRECISION,
-            longitude DOUBLE PRECISION,
+            -- latitude DOUBLE PRECISION,
+            -- longitude DOUBLE PRECISION,
+            ativo BOOLEAN,
             created_at TIMESTAMP NOT NULL DEFAULT now(),
             updated_at TIMESTAMP NOT NULL DEFAULT now(),
+            deleted_at TIMESTAMP NULL,
             CONSTRAINT pk_endereco PRIMARY KEY (id),
             CONSTRAINT fk_endereco_pessoa FOREIGN KEY (pessoa_id) REFERENCES cadastro.pessoa (id) ON DELETE CASCADE
           );
